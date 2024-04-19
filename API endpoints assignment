@@ -1,0 +1,60 @@
+1)API Endpoints
+   Doctors Listing:
+   Endpoint: /doctors
+Method: GET
+Description: Get a list of all doctors with their basic information.
+
+Response:
+{
+  "doctors": [
+    {
+      "doctor_id": 1,
+      "name": "Dr. John Doe"
+    },
+    {
+      "doctor_id": 2,
+      "name": "Dr. Jane Smith"
+    }
+  ]
+}
+
+2)Doctor Detail Page:
+
+Endpoint: /doctors/{doctor_id}
+Method: GET
+Description: Get detailed information about a specific doctor, including their weekly schedule.
+
+Response:
+{
+  "doctor_id": 1,
+  "name": "Dr. John Doe",
+  "weekly_schedule": {
+    "Monday": "5:00 PM - 8:00 PM",
+    "Tuesday": "5:00 PM - 8:00 PM",
+    "Wednesday": "5:00 PM - 8:00 PM",
+    "Thursday": "5:00 PM - 8:00 PM",
+    "Friday": "5:00 PM - 8:00 PM"
+  }
+}
+
+3)Appointment Booking:
+
+Endpoint: /appointments/book
+Method: POST
+Description: Book an appointment with a doctor
+
+Request Body:
+{
+  "doctor_id": 1,
+  "patient_name": "Alice Smith",
+  "appointment_time": "2023-10-15T17:30:00" ,
+  "date": "2024-04-14"
+}
+
+Response:
+{
+  "appointment_id": 123,
+  "doctor_id": 1,
+  "patient_name": "Alice Smith",
+  "appointment_time": "2023-10-15T17:30:00"
+}
